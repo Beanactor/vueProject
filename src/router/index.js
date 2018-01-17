@@ -9,11 +9,13 @@ Vue.use(Router)
 const Carousel = resolve => {require.ensure([], () => {resolve(require('../components/Carousel/Carousel'))})};
 const HelloWorld = resolve => {require.ensure([], () => {resolve(require('../components/HelloWorld'))})};
 const test = resolve => {require.ensure([], () => {resolve(require('../components/test'))})};
+const DGZTC = resolve => {require.ensure([], () => {resolve(require('../components/DGZTC'))})};
 
 const routes = [
   { path: '/', component: HelloWorld },
   { path: '/test', component: test },
-  { path: '/Carousel', component: Carousel }
+  { path: '/Carousel', component: Carousel },
+  { path: '/DGZTC', component: DGZTC }
 ]
 
 const router = new Router({

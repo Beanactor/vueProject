@@ -1,28 +1,36 @@
 <template>
 	<div class="root">
-		<div class="spanWrap"><span @click="resultIndex=0;">{{results1[0].name}}</span><span @click="resultIndex=1;">{{results1[1].name}}</span></div>
-		<div class="result">
-			<ul>
-				<li>{{results1[resultIndex].name}}</li>
-				<li>
-					<ul v-for="(value,key) in results1[resultIndex].chengji">
-						<li>
-							<ul v-for="(value,key) in value">
-								<li>{{key}}-----------{{value}}</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-			</ul>
+		<div class="checkoutResultMoudle">
+			<h3>点击姓名可查看相关成绩</h3>
+			<div class="spanWrap"><span @click="resultIndex=0;">{{results1[0].name}}</span><span @click="resultIndex=1;">{{results1[1].name}}</span></div>
+			<div class="result">
+				<ul>
+					<li>{{results1[resultIndex].name}}</li>
+					<li>
+						<ul v-for="(value,key) in results1[resultIndex].chengji">
+							<li>
+								<ul v-for="(value,key) in value">
+									<li>{{key}}-----------{{value}}</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
 		</div>
 
-		<el-button type="primary" round @click='sendAjaxGet'>sendAjaxGet</el-button>
 		<el-input v-model="userTel" placeholder="请输入手机号" class='input'></el-input>
 		<el-input v-model="password" placeholder="请输入密码" class='input'></el-input>
+		<el-button type="primary" round @click='sendAjaxGet'>sendAjaxGet</el-button>
 		<el-button type="success" plain @click='sendAjaxpost'>sendAjaxpost</el-button>
-		<router-link to="/test"><el-button type="primary" icon="el-icon-view" class='input'>testComponents</el-button></router-link>
+		<router-link to="/test">
+			<el-button type="primary" icon="el-icon-view" class='input'>testComponents</el-button>
+		</router-link>
 		<!--<router-link to="/Carousel"><el-button type="primary" icon="el-icon-view">CarouselComponents</el-button></router-link>-->
-		<el-button type="primary" icon="el-icon-view" @click='toCarousel'>CarouselComponents</el-button>
+		<div class="testComponent">
+			<el-button type="primary" icon="el-icon-view" @click='toCarousel'>CarouselComponents</el-button>
+			<el-button type="" icon="el-icon-view" @click='toDGZTCComponent'>DGZTCComponents</el-button>
+		</div>
 	</div>
 </template>
 
@@ -35,7 +43,7 @@
 				url: 'http://wubaoguo.zz598.cn/dgztc-web', // 保国域名
 				userTel: '',
 				password: '',
-				verifyCode:'',
+				verifyCode: '',
 				results1: [{
 						name: '小李',
 						chengji: [{
@@ -67,10 +75,19 @@
 			}
 		},
 		methods: {
-			toCarousel(){
-				console.log(this)
-				console.log(this.$router)
-				this.$router.push({ path: 'Carousel', query: { id: 100 }})
+			toCarousel() {
+				this.$router.push({
+					path: 'Carousel',
+					query: {
+						id: 100
+					}
+				})
+			},
+			toDGZTCComponent() {
+				this.$router.push({
+					path: 'DGZTC',
+					query: {}
+				})
 			},
 			sendAjaxGet() {
 				let _this = this;
@@ -120,6 +137,11 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+	.checkoutResultMoudle {
+		border: 1px solid #000;
+		padding: 10px;
+	}
+	
 	.spanWrap {
 		margin: 0 auto;
 		width: 60%;
@@ -147,5 +169,15 @@
 		width: 50%;
 		display: block;
 		margin: 10px auto;
+	}
+	
+	.testComponent {
+		border: 1px solid #000;
+		padding: 20px;
+	}
+	
+	.testComponent button {
+		width: 80%;
+		margin: 10px;
 	}
 </style>
