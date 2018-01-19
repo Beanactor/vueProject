@@ -17,10 +17,18 @@
 			</el-carousel>
 		</div>
 		<div class="navList">
-			<span>就业咨询</span>
-			<span>媒体曝光</span>
-			<span>新闻热点</span>
+			<span @click="showJob" :class="{redColor:Job}">就业咨询</span>
+			<span @click="showMedia" :class="{redColor:Media}">媒体曝光</span>
+			<span @click="showHot" :class="{redColor:Hot}">新闻热点</span>
 		</div>
+			<div class="content">
+				<div class="Job" v-show="Job">
+					
+				</div>
+				<div class="Media" v-show="Media">222222</div>
+				<div class="Hot" v-show="Hot">333333</div>
+			</div>
+		
 	</div>
 </template>
 
@@ -33,10 +41,29 @@
 				//					'../assets/carouselImg/carouselImg2.jpg',
 				//					'../assets/carouselImg/carouselImg3.jpg'
 				//				]
-
-			};
+				Job:true,
+				Media:false,
+				Hot:false
+			}
 		},
-		created() {}
+		created() {},
+		methods:{
+			showJob(){
+				this.Job = true;
+				this.Media=false,
+				this.Hot=false
+			},
+			showMedia(){
+				this.Job = false;
+				this.Media=true,
+				this.Hot=false
+			},
+			showHot(){
+				this.Job = false;
+				this.Media=false,
+				this.Hot=true
+			}
+		}
 	}
 </script>
 
@@ -80,5 +107,8 @@
 	.navList span:nth-child(2) {
 		border-left: 0;
 		border-right: 0;
+	}
+	.redColor {
+		color:#f00
 	}
 </style>
