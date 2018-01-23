@@ -11,13 +11,15 @@ const HelloWorld = resolve => {require.ensure([], () => {resolve(require('../com
 const test = resolve => {require.ensure([], () => {resolve(require('../components/test'))})};
 const DGZTC = resolve => {require.ensure([], () => {resolve(require('../components/DGZTC'))})};
 const RandomStr = resolve => {require.ensure([], () => {resolve(require('../components/RandomStr'))})};
+const formTest = resolve => {require.ensure([], () => {resolve(require('../components/formTest'))})};
 
 const routes = [
   { path: '/', component: HelloWorld },
   { path: '/test', component: test },
   { path: '/Carousel', component: Carousel },
   { path: '/DGZTC', component: DGZTC },
-  { path: '/RandomStr', component: RandomStr }
+  { path: '/RandomStr', component: RandomStr },
+  { path: '/formTest', component: formTest }
 ]
 
 const router = new Router({

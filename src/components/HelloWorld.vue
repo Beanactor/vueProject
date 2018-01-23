@@ -26,16 +26,11 @@
 		<router-link to="/test">
 			<el-button type="primary" icon="el-icon-view" class='input'>testComponents</el-button>
 		</router-link>
-		<!--<router-link to="/Carousel"><el-button type="primary" icon="el-icon-view">CarouselComponents</el-button></router-link>-->
-		<div class="testComponent">
-			<el-button type="primary" icon="el-icon-view" @click='toCarousel'>CarouselComponents</el-button>
-			<el-button type="" icon="el-icon-view" @click='toDGZTCComponent'>DGZTCComponents</el-button>
-		</div>
-		<br />
-		<hr />
-			<el-button type="primary" icon="el-icon-view" @click='toRandomStr'>RandomStrComponents</el-button>
-		
-		
+		<el-button type="primary" icon="el-icon-view" @click='toCarousel'>CarouselComponents</el-button>
+		<el-button type="" icon="el-icon-view" @click='toDGZTCComponent'>DGZTCComponents</el-button>
+		<el-button type="primary" icon="el-icon-view" @click='toRandomStr'>RandomStrComponents</el-button>
+		<el-button type="primary" icon="el-icon-view" @click='toFormTest'>FormTestComponents</el-button>
+
 	</div>
 </template>
 
@@ -80,9 +75,9 @@
 			}
 		},
 		methods: {
-			toRandomStr(){
+			toRandomStr() {
 				this.$router.push({
-					path:'RandomStr'
+					path: 'RandomStr'
 				})
 			},
 			toCarousel() {
@@ -96,6 +91,12 @@
 			toDGZTCComponent() {
 				this.$router.push({
 					path: 'DGZTC',
+					query: {}
+				})
+			},
+			toFormTest() {
+				this.$router.push({
+					path: 'formTest',
 					query: {}
 				})
 			},
@@ -188,6 +189,10 @@
 	
 	.testComponent button {
 		width: 80%;
+		margin: 10px;
+	}
+	
+	.root button {
 		margin: 10px;
 	}
 </style>
