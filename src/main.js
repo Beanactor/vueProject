@@ -14,6 +14,9 @@ Vue.use(AtComponents)
 //引入axios
 import axios from 'axios'
 Vue.prototype.$ajax = axios
+// 引入随机字符串库
+import randomstring  from 'randomstring'
+Vue.prototype.randomstring = randomstring
 
 Vue.config.productionTip = false
 /* eslint-disable no-new */

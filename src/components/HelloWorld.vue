@@ -31,6 +31,11 @@
 			<el-button type="primary" icon="el-icon-view" @click='toCarousel'>CarouselComponents</el-button>
 			<el-button type="" icon="el-icon-view" @click='toDGZTCComponent'>DGZTCComponents</el-button>
 		</div>
+		<br />
+		<hr />
+			<el-button type="primary" icon="el-icon-view" @click='toRandomStr'>RandomStrComponents</el-button>
+		
+		
 	</div>
 </template>
 
@@ -75,6 +80,11 @@
 			}
 		},
 		methods: {
+			toRandomStr(){
+				this.$router.push({
+					path:'RandomStr'
+				})
+			},
 			toCarousel() {
 				this.$router.push({
 					path: 'Carousel',

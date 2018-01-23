@@ -10,12 +10,14 @@ const Carousel = resolve => {require.ensure([], () => {resolve(require('../compo
 const HelloWorld = resolve => {require.ensure([], () => {resolve(require('../components/HelloWorld'))})};
 const test = resolve => {require.ensure([], () => {resolve(require('../components/test'))})};
 const DGZTC = resolve => {require.ensure([], () => {resolve(require('../components/DGZTC'))})};
+const RandomStr = resolve => {require.ensure([], () => {resolve(require('../components/RandomStr'))})};
 
 const routes = [
   { path: '/', component: HelloWorld },
   { path: '/test', component: test },
   { path: '/Carousel', component: Carousel },
-  { path: '/DGZTC', component: DGZTC }
+  { path: '/DGZTC', component: DGZTC },
+  { path: '/RandomStr', component: RandomStr }
 ]
 
 const router = new Router({
