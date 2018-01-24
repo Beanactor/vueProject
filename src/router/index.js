@@ -5,32 +5,82 @@ import Router from 'vue-router'
 //import Carousel from '@/components/Carousel/Carousel'
 Vue.use(Router)
 
+const Carousel = resolve => {
+	require.ensure([], () => {
+		resolve(require('../components/Carousel/Carousel'))
+	})
+};
+const HelloWorld = resolve => {
+	require.ensure([], () => {
+		resolve(require('../components/HelloWorld'))
+	})
+};
+const test = resolve => {
+	require.ensure([], () => {
+		resolve(require('../components/test'))
+	})
+};
+const DGZTC = resolve => {
+	require.ensure([], () => {
+		resolve(require('../components/DGZTC'))
+	})
+};
+const RandomStr = resolve => {
+	require.ensure([], () => {
+		resolve(require('../components/RandomStr'))
+	})
+};
+const formTest = resolve => {
+	require.ensure([], () => {
+		resolve(require('../components/formTest'))
+	})
+};
+const commitTest = resolve => {
+	require.ensure([], () => {
+		resolve(require('../components/commitTest'))
+	})
+};
 
-const Carousel = resolve => {require.ensure([], () => {resolve(require('../components/Carousel/Carousel'))})};
-const HelloWorld = resolve => {require.ensure([], () => {resolve(require('../components/HelloWorld'))})};
-const test = resolve => {require.ensure([], () => {resolve(require('../components/test'))})};
-const DGZTC = resolve => {require.ensure([], () => {resolve(require('../components/DGZTC'))})};
-const RandomStr = resolve => {require.ensure([], () => {resolve(require('../components/RandomStr'))})};
-const formTest = resolve => {require.ensure([], () => {resolve(require('../components/formTest'))})};
-const commitTest = resolve => {require.ensure([], () => {resolve(require('../components/commitTest'))})};
-
-const routes = [
-  { path: '/', component: HelloWorld },
-  { path: '/test', component: test },
-  { path: '/Carousel', component: Carousel },
-  { path: '/DGZTC', component: DGZTC },
-  { path: '/RandomStr', component: RandomStr },
-  { path: '/formTest', component: formTest },
-  { path: '/commitTest', component: commitTest }
+const routes = [{
+		path: '/',
+		component: HelloWorld
+	},
+	{
+		path: '/test',
+		component: test,
+		children: [{
+			path: 'Carousel',
+			component: Carousel
+		}]
+	},
+	{
+		path: '/Carousel',
+		component: Carousel
+	},
+	{
+		path: '/DGZTC',
+		component: DGZTC
+	},
+	{
+		path: '/RandomStr',
+		component: RandomStr
+	},
+	{
+		path: '/formTest',
+		component: formTest
+	},
+	{
+		path: '/commitTest',
+		component: commitTest
+	}
 ]
 
 const router = new Router({
-routes // （缩写）相当于 routes: routes
+	routes // （缩写）相当于 routes: routes
 })
 const app = new Vue({
-  router
+	router
 }).$mount('#app')
-
 
 //export default new Router({
 //routes: [
@@ -46,6 +96,6 @@ const app = new Vue({
 //  }
 //]
 //})
-export default new Router({routes})
-
-
+export default new Router({
+	routes
+})

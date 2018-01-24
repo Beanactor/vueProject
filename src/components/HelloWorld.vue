@@ -21,7 +21,7 @@
 
 		<el-input v-model="userTel" placeholder="请输入手机号" class='input'></el-input>
 		<el-input v-model="password" placeholder="请输入密码" class='input'></el-input>
-		<el-input v-model="text" placeholder="请输入验证码" class='input'></el-input>
+		<el-input v-model="verifyCode" placeholder="请输入验证码" class='input'></el-input>
 		<el-button type="primary" round @click='sendAjaxGet'>getVerifyCode</el-button>
 		<el-button type="success" plain @click='sendAjaxpost'>login</el-button>
 		<hr />

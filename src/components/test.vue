@@ -1,5 +1,6 @@
 <template>
 	<div class="root">
+
 	<el-button type="primary" icon="el-icon-caret-bottom" @click='checkoutactiveNames'>下一项</el-button>
 		
 		<el-collapse v-model="activeNames" @change="handleChange">
@@ -22,16 +23,21 @@
 			</el-collapse-item>
 		</el-collapse>
 	<button @click='checkoutactiveNames'>下一项</button>
+		<router-view></router-view>
+		<carousel :isactive='colorStatus'></carousel>
+	
 
 	</div>
 
 </template>
 
 <script>
+	import  carousel    from  './carousel/carousel';
 	export default {
 		data() {
 			return {
-				activeNames: ['1']
+				activeNames: ['1'],
+				colorStatus: true
 			};
 		},
 		methods: {
@@ -46,10 +52,18 @@
 				console.log(typeof nextactiveNames)
 				this.activeNames = [nextactiveNames];
 			}
+		},
+		components:{
+			carousel
 		}
+		
 	}
 </script>
 
 <style>
+	.width {
+		width: 80%;
+		margin: 10%;
+	}
 
 </style>
