@@ -24,9 +24,10 @@
 		</el-collapse>
 	<button @click='checkoutactiveNames'>下一项</button>
 		<router-view></router-view>
-		<carousel :isactive='colorStatus'></carousel>
+		<carousel :isactive='colorStatus' @sendgoodId='getgoodId'></carousel>
+		<h1> {{  data }} </h1>
 	</div>
-
+	
 </template>
 
 <script>
@@ -35,8 +36,15 @@
 		data() {
 			return {
 				activeNames: ['1'],
-				colorStatus: true
+				colorStatus: true,
+				data: ''
 			};
+		},
+//		created() {
+//			this.getgoodId(data)
+//		},
+		mounted() {
+//			this.getgoodId(data)
 		},
 		methods: {
 			handleChange(val) {
@@ -49,6 +57,9 @@
 				}
 				console.log(typeof nextactiveNames)
 				this.activeNames = [nextactiveNames];
+			},
+			getgoodId(data){
+				this.data = data;
 			}
 		},
 		components:{
