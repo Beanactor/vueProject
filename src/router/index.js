@@ -12,6 +12,7 @@ const test = resolve => {require.ensure([], () => {resolve(require('../component
 const DGZTC = resolve => {require.ensure([], () => {resolve(require('../components/DGZTC'))})};
 const RandomStr = resolve => {require.ensure([], () => {resolve(require('../components/RandomStr'))})};
 const formTest = resolve => {require.ensure([], () => {resolve(require('../components/formTest'))})};
+const commitTest = resolve => {require.ensure([], () => {resolve(require('../components/commitTest'))})};
 
 const routes = [
   { path: '/', component: HelloWorld },
@@ -19,7 +20,8 @@ const routes = [
   { path: '/Carousel', component: Carousel },
   { path: '/DGZTC', component: DGZTC },
   { path: '/RandomStr', component: RandomStr },
-  { path: '/formTest', component: formTest }
+  { path: '/formTest', component: formTest },
+  { path: '/commitTest', component: commitTest }
 ]
 
 const router = new Router({

@@ -21,15 +21,18 @@
 
 		<el-input v-model="userTel" placeholder="请输入手机号" class='input'></el-input>
 		<el-input v-model="password" placeholder="请输入密码" class='input'></el-input>
-		<el-button type="primary" round @click='sendAjaxGet'>sendAjaxGet</el-button>
-		<el-button type="success" plain @click='sendAjaxpost'>sendAjaxpost</el-button>
+		<el-input v-model="text" placeholder="请输入验证码" class='input'></el-input>
+		<el-button type="primary" round @click='sendAjaxGet'>getVerifyCode</el-button>
+		<el-button type="success" plain @click='sendAjaxpost'>login</el-button>
+		<hr />
 		<router-link to="/test">
-			<el-button type="primary" icon="el-icon-view" class='input'>testComponents</el-button>
+			<el-button type="primary" icon="el-icon-view" class='input'>test</el-button>
 		</router-link>
-		<el-button type="primary" icon="el-icon-view" @click='toCarousel'>CarouselComponents</el-button>
-		<el-button type="" icon="el-icon-view" @click='toDGZTCComponent'>DGZTCComponents</el-button>
-		<el-button type="primary" icon="el-icon-view" @click='toRandomStr'>RandomStrComponents</el-button>
-		<el-button type="primary" icon="el-icon-view" @click='toFormTest'>FormTestComponents</el-button>
+		<el-button type="primary" icon="el-icon-view" @click='toCarousel'>Carousel</el-button>
+		<el-button type="" icon="el-icon-view" @click='toDGZTCComponent'>DGZTC</el-button>
+		<el-button type="primary" icon="el-icon-view" @click='toRandomStr'>RandomStr</el-button>
+		<el-button type="primary" icon="el-icon-view" @click='toFormTest'>FormTest</el-button>
+		<el-button type="primary" icon="el-icon-view" @click='toCommitTest'>commitTest</el-button>
 
 	</div>
 </template>
@@ -97,6 +100,12 @@
 			toFormTest() {
 				this.$router.push({
 					path: 'formTest',
+					query: {}
+				})
+			},
+			toCommitTest() {
+				this.$router.push({
+					path: 'commitTest',
 					query: {}
 				})
 			},
@@ -191,8 +200,9 @@
 		width: 80%;
 		margin: 10px;
 	}
-	
 	.root button {
-		margin: 10px;
+		margin: 10px 0;
+		width: 80%;
+		font-size: 26px;
 	}
 </style>
