@@ -25,8 +25,6 @@
 	<button @click='checkoutactiveNames'>下一项</button>
 		<router-view></router-view>
 		<carousel :isactive='colorStatus'></carousel>
-	
-
 	</div>
 
 </template>
