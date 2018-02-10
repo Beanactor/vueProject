@@ -7,7 +7,7 @@ Vue.use(Router)
 
 const Carousel = resolve => {
 	require.ensure([], () => {
-		resolve(require('../components/Carousel/Carousel'))
+		resolve(require('../components/carousel/carousel'))
 	})
 };
 const HelloWorld = resolve => {
@@ -49,12 +49,12 @@ const routes = [{
 		path: '/test',
 		component: test,
 		children: [{
-			path: 'Carousel',
+			path: 'carousel',
 			component: Carousel
 		}]
 	},
 	{
-		path: '/Carousel',
+		path: '/carousel',
 		component: Carousel
 	},
 	{

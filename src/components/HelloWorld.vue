@@ -201,7 +201,7 @@
 		margin: 10px;
 	}
 	.root button {
-		margin: 10px 0;
+		margin: 10px 10%;
 		width: 80%;
 		font-size: 26px;
 	}
