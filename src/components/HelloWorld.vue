@@ -111,7 +111,6 @@
 				})
 			},
 			toNewScroll(){
-				alert("toNewScroll")
 				this.$router.push({
 					path: 'newScroll',
 					query: {}
