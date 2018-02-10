@@ -33,6 +33,7 @@
 		<el-button type="primary" icon="el-icon-view" @click='toRandomStr'>RandomStr</el-button>
 		<el-button type="primary" icon="el-icon-view" @click='toFormTest'>FormTest</el-button>
 		<el-button type="primary" icon="el-icon-view" @click='toCommitTest'>commitTest</el-button>
+		<el-button type="primary" icon="el-icon-view" @click='toNewScroll'>NewScroll</el-button>
 
 	</div>
 </template>
@@ -106,6 +107,13 @@
 			toCommitTest() {
 				this.$router.push({
 					path: 'commitTest',
+					query: {}
+				})
+			},
+			toNewScroll(){
+				alert("toNewScroll")
+				this.$router.push({
+					path: 'newScroll',
 					query: {}
 				})
 			},

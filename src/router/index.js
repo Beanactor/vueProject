@@ -40,6 +40,11 @@ const commitTest = resolve => {
 		resolve(require('../components/commitTest'))
 	})
 };
+const newScroll = resolve => {
+	require.ensure([], () => {
+		resolve(require('../components/newScroll'))
+	})
+};
 
 const routes = [{
 		path: '/',
@@ -72,6 +77,10 @@ const routes = [{
 	{
 		path: '/commitTest',
 		component: commitTest
+	},
+	{
+		path: '/newScroll',
+		component: newScroll
 	}
 ]
 
