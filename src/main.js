@@ -18,6 +18,9 @@ Vue.prototype.$ajax = axios
 import randomstring  from 'randomstring'
 Vue.prototype.randomstring = randomstring
 
+
+
+
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({

@@ -35,12 +35,14 @@
 			}
 		},
 		created() {
+		},
+		mounted(){
 			setInterval(this.scroll, 2000)
 		},
 		methods: {
 			scroll() { //消息滚动
 				let _this = this; // 在异步函数中会出现this的偏移问题，此处一定要先保存好this的指向
-				let con1 = this.$refs.con1;
+				let con1 = _this.$refs.con1;
 				con1.style.marginTop = '-50px';
 				this.animate = !this.animate;
 				this.timer = setTimeout(function() {

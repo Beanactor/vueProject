@@ -46,6 +46,17 @@ const newScroll = resolve => {
 	})
 };
 
+const directive = resolve => {
+	require.ensure([], () => {
+		resolve(require('../components/directive'))
+	})
+};
+const transition = resolve => {
+	require.ensure([], () => {
+		resolve(require('../components/transition'))
+	})
+};
+
 const routes = [{
 		path: '/',
 		component: HelloWorld
@@ -81,6 +92,19 @@ const routes = [{
 	{
 		path: '/newScroll',
 		component: newScroll
+	},
+	
+	{
+		path: '/directive',
+		component: directive
+	},
+	{
+		path: '/transition',
+		component: transition,
+		children: [{
+			path: 'RandomStr',
+			component: RandomStr
+		}]
 	}
 ]
 

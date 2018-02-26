@@ -34,11 +34,14 @@
 		<el-button type="primary" icon="el-icon-view" @click='toFormTest'>FormTest</el-button>
 		<el-button type="primary" icon="el-icon-view" @click='toCommitTest'>commitTest</el-button>
 		<el-button type="primary" icon="el-icon-view" @click='toNewScroll'>NewScroll</el-button>
+		<el-button type="primary" icon="el-icon-view" @click='toDirective'>directive</el-button>
+		<el-button type="primary" icon="el-icon-view" @click='toTransition'>Transition</el-button>
 
 	</div>
 </template>
 
 <script type="text/ecmascript-6">
+	
 	import qs from 'qs';
 	export default {
 		name: 'HelloWorld',
@@ -78,6 +81,7 @@
 				resultIndex: 0
 			}
 		},
+		
 		methods: {
 			toRandomStr() {
 				this.$router.push({
@@ -110,9 +114,21 @@
 					query: {}
 				})
 			},
-			toNewScroll(){
+			toNewScroll() {
 				this.$router.push({
 					path: 'newScroll',
+					query: {}
+				})
+			},
+			toDirective() {
+				this.$router.push({
+					path: 'directive',
+					query: {}
+				})
+			},
+			toTransition() {
+				this.$router.push({
+					path: 'transition',
 					query: {}
 				})
 			},
@@ -207,6 +223,7 @@
 		width: 80%;
 		margin: 10px;
 	}
+	
 	.root button {
 		margin: 10px 10%;
 		width: 80%;
